@@ -1,0 +1,27 @@
+{
+  "name": "rootlogin/jsrouting-provider",
+  "license": "GPLv3",
+  "type": "library",
+  "description": "javascript routing provider for the silex framework",
+  "keywords": ["javascript","routing","silex"],
+  "homepage": "https://rootlogin.ch",
+  "authors": [
+    {
+      "name": "Simon Erhardt",
+      "email": "me@rootlogin.ch",
+      "homepage": "https://rootlogin.ch",
+      "role": "Lead Developer"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "rootLogin": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.4.14"
+    "silex/silex": "~1.2",
+  },
+  "minimum-stability": "alpha",
+  "prefer-stable": true
+}
