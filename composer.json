@@ -1,6 +1,6 @@
 {
   "name": "rootlogin/jsrouting-provider",
-  "license": "GPLv3",
+  "license": "GPL-3.0+",
   "type": "library",
   "description": "javascript routing provider for the silex framework",
   "keywords": ["javascript","routing","silex"],
