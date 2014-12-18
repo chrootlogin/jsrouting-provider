@@ -8,7 +8,6 @@ use Silex\ControllerProviderInterface;
 use Silex\ServiceProviderInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Yaml\Parser as YamlParser;
 
 class SilexJSRoutingProvider implements ServiceProviderInterface
 {
