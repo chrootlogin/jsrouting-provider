@@ -19,9 +19,13 @@
     }
   },
   "require": {
-    "php": ">=5.4.14"
-    "silex/silex": "~1.2",
+    "php": ">=5.3",
+    "silex/silex": "~1.2"
   },
-  "minimum-stability": "alpha",
+  "suggests": {
+    "twig/twig": ">=1.8",
+    "twig/extensions": "~1.0"
+  },
+  "minimum-stability": "beta",
   "prefer-stable": true
 }
