@@ -8,7 +8,7 @@ Installation
 
 Register the provider in your silex application:
 ``` {.php}
-$app->register(new rootLogin\JSRoutingProvider\Provider\SilexJSRoutingProvider(), array(
+$app->register(new rootLogin\JSRoutingProvider\Provider\SilexJSRoutingServiceProvider(), array(
   "jsrouting.base_url" => "/",
   "jsrouting.exposed_routes" => array("routeA", "routeB")
   ));
