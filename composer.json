@@ -24,7 +24,8 @@
   },
   "suggests": {
     "twig/twig": ">=1.8",
-    "twig/extensions": "~1.0"
+    "twig/extensions": "~1.0",
+    "saxulum/saxulum-console": "~2.1,>=2.1.3"
   },
   "minimum-stability": "beta",
   "prefer-stable": true

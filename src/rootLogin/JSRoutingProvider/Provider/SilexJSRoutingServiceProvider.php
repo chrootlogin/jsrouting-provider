@@ -2,14 +2,13 @@
 
 namespace rootLogin\JSRoutingProvider\Provider;
 
+use rootLogin\JSRoutingProvider\Command\DumpJSCommand;
+use rootLogin\JSRoutingProvider\Command\DumpRouterCommand;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\Application;
-use Silex\ControllerProviderInterface;
 use Silex\ServiceProviderInterface;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
 
-class SilexJSRoutingProvider implements ServiceProviderInterface
+class SilexJSRoutingServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {
@@ -22,7 +21,17 @@ class SilexJSRoutingProvider implements ServiceProviderInterface
         $app->mount($app['jsrouting.base_url'], new SilexJSRoutingControllerProvider());
     }
 
-    public function boot(Application $app) {}
+    public function boot(Application $app)
+    {
+        if(isset($app['console'])) {
+            $console = $app['console'];
+            if(get_class($console) == "Saxulum\Console\Console\ConsoleApplication") {
+                /** @var \Saxulum\Console\Console\ConsoleApplication $console */
+                $console->add(new DumpJSCommand());
+                $console->add(new DumpRouterCommand());
+            }
+        }
+    }
 
     public function getDefaults() {
         return array(
