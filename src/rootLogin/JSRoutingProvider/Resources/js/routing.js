@@ -9,7 +9,7 @@ var router = {
         var url = this.baseurl + route.path;
 
         // Get params if exists
-        if(arguments[1] != undefined) {
+        if(arguments[1] !== undefined) {
             var params = arguments[1];
             for(var key in params) {
                 if(params.hasOwnProperty(key)) {
@@ -20,14 +20,14 @@ var router = {
         }
 
         var res = url.match(/{[a-zA-Z]+}/);
-        if(res != null) {
+        if(res !== null) {
             throw new Error("Identifier " + res + " needs to be set!");
         }
 
         if(route.requirements.length > 0) {
-            if(route.requirements["_scheme"] !== undefined) {
-                if(route.requirements["_scheme"] != window.location.protocol) {
-                    url = route.requirements["_scheme"] + "://" + url;
+            if(route.requirements._scheme !== undefined) {
+                if(route.requirements._scheme != window.location.protocol) {
+                    url = route.requirements._scheme + "://" + url;
                 }
             }
         }
