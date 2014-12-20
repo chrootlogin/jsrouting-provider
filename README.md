@@ -3,7 +3,7 @@ Silex JSRouting Provider
 
 The JSRouting Provider is a silex routing provider for javascript, that exposes routes to a javascript file. Then you can generate routes for use with javascript frameworks like AngularJS.
 
-[![Build Status](https://api.travis-ci.org/chrootlogin/jsrouting-provider.png?branch=master)](https://travis-ci.org/chrootlogin/jsrouting-provider)
+[![Build Status](https://api.travis-ci.org/chrootLogin/jsrouting-provider.png?branch=master)](https://travis-ci.org/chrootlogin/jsrouting-provider)
 [![Total Downloads](https://poser.pugx.org/rootlogin/jsrouting-provider/downloads.png)](https://packagist.org/packages/rootlogin/jsrouting-provider)
 [![Latest Stable Version](https://poser.pugx.org/rootlogin/jsrouting-provider/v/stable.png)](https://packagist.org/packages/rootlogin/jsrouting-provider)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/chrootLogin/jsrouting-provider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/chrootLogin/jsrouting-provider/?branch=master)
