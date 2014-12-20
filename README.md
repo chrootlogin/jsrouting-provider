@@ -35,6 +35,10 @@ It will be automatically activated after you registered the provider.
 * jsrouting:dump:router.js
   This only dumps the router.js. You need to add the routes manually.
   
+Run the tests
+-------------
+Go to the base directory of the jsrouting-provider. Do a `composer install` and enter `vendor/bin/phpunit`.
+  
 Warning
 -------
 This project is in early development stages. No warranty if it kills your kittens or starts a nuclear war ;)

@@ -22,6 +22,9 @@
     "php": ">=5.3",
     "silex/silex": "~1.2"
   },
+  "require-dev": {
+    "phpunit/phpunit": "~4.3"
+  },
   "suggests": {
     "twig/twig": ">=1.8",
     "twig/extensions": "~1.0",
