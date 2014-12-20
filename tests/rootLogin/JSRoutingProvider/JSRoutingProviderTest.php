@@ -31,7 +31,7 @@ class JSRoutingProviderTest extends \PHPUnit_Framework_TestCase
 		$routeB->setMethods(array("GET","POST"));
 		$routeB->setRequirement("_method", "GET|POST");
 		$routeB->setOption("expose", true);
-		$routeCollection->add("routeB", $routeA);
+		$routeCollection->add("routeB", $routeB);
 	}
 	
 	public function testGetJavaScript()
@@ -42,5 +42,38 @@ class JSRoutingProviderTest extends \PHPUnit_Framework_TestCase
 			$jsrp->getJavaScript(), 
 			file_get_contents(__DIR__ . "/../../../src/rootLogin/JSRoutingProvider/Resources/js/routing.js")
 		);
+	}
+	
+	public function testGetJSRoutes() 
+	{
+		$jsrp = new JSRoutingProvider($this->app);
+		
+		$routes = array(
+			"routeA" => array(
+				"host" => "",
+				"path" => "/router.js",
+				"schemes" => array(),
+				"requirements" => array(
+					"_method" => "GET"
+				),
+				"condition" => ""
+			),
+			"routeB" => array(
+				"host" => "",
+				"path" => "/user/{id}",
+				"schemes" => array(),
+				"requirements" => array(
+					"_method" => "GET|POST"
+				),
+				"condition" => ""
+			)
+		);
+		
+		$res = "";
+		foreach($routes as $name => $route) {
+			$res .= "\nrouter.addRoute('$name', " . json_encode($route) . ");";
+		}
+		
+		$this->assertEquals($jsrp->getJSRoutes(), $res);
 	}
 }
