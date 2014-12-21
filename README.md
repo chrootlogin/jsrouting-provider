@@ -28,7 +28,7 @@ $app->register(new rootLogin\JSRoutingProvider\Provider\SilexJSRoutingServicePro
   ));
 ```
 
-Set the route option _exposed_ to _true_.
+Set the route option _expose_ to _true_.
 ``` {.php}
 $controllers->get("/hello", function() {
     return "hello world"!
