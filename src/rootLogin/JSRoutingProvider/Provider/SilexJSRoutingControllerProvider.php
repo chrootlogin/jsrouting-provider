@@ -4,9 +4,7 @@ namespace rootLogin\JSRoutingProvider\Provider;
 
 use rootLogin\JSRoutingProvider\JSRoutingProvider;
 use Silex\Application;
-use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class SilexJSRoutingControllerProvider implements ControllerProviderInterface

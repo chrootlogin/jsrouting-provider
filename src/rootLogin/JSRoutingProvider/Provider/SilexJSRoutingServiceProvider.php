@@ -4,7 +4,6 @@ namespace rootLogin\JSRoutingProvider\Provider;
 
 use rootLogin\JSRoutingProvider\Command\DumpJSCommand;
 use rootLogin\JSRoutingProvider\Command\DumpRouterCommand;
-use Symfony\Component\HttpFoundation\Request;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 
