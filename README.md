@@ -28,9 +28,23 @@ $app->register(new rootLogin\JSRoutingProvider\Provider\SilexJSRoutingServicePro
   ));
 ```
 
+Set the route option _exposed_ to _true_.
+``` {.php}
+$controllers->get("/hello", function() {
+    return "hello world"!
+})->bind("hello")->getRoute()->setOption("expose",true);
+```
+
 Include and use it in your frontend like this.
 ``` {.html}
+<!-- Gets the full router with the routes -->
 <script src="{{ path("jsrouting") }}"></script>
+
+<!-- Or if you want only some parts you can get the router and the routes separately -->
+<script src="{{ path("jsrouter") }}"></script><!-- Gets only the router -->
+<script src="{{ path("jsroutes") }}"></script><!-- Gets only the routes -->
+
+<!-- Get routes like this -->
 <script>
   console.log(router.generate("routeA"));
   console.log(router.generate("routeB", {id: 3}));

@@ -28,10 +28,30 @@ class SilexJSRoutingControllerProvider implements ControllerProviderInterface
 
         /** @var ControllerCollection $controllers */
         $controllers = $app['controllers_factory'];
+		
+		$controllers->get("/router.js", function() {
+            return new Response(
+				$this->jsrp->getJavaScript(), 
+				200, 
+				array("Content-Type" => "text/javascript")
+			);
+        })->bind("jsrouter")->getRoute()->setOption("expose",true);
 
-        $controllers->get("/router.js", function(Application $app) {
-            return new Response($this->jsrp->getJSwithRoutes(), 200, array("Content-Type" => "text/javascript"));
+        $controllers->get("/routing.js", function() {
+            return new Response(
+				$this->jsrp->getJSwithRoutes(), 
+				200, 
+				array("Content-Type" => "text/javascript")
+			);
         })->bind("jsrouting")->getRoute()->setOption("expose",true);
+		
+		$controllers->get("/routes.js", function() {
+            return new Response(
+				$this->jsrp->getJSRoutes(), 
+				200, 
+				array("Content-Type" => "text/javascript")
+			);
+        })->bind("jsroutes")->getRoute()->setOption("expose",true);
 
         return $controllers;
     }
