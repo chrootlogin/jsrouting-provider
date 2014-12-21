@@ -26,7 +26,7 @@ class SilexJSRoutingControllerProvider implements ControllerProviderInterface
         $this->app = $app;
         $this->jsrp = new JSRoutingProvider($app);
 
-        /** @var ControllerCollection $controllers */
+        /** @var \Silex\ControllerCollection $controllers */
         $controllers = $app['controllers_factory'];
 		
 		$controllers->get("/router.js", function() {
