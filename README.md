@@ -11,6 +11,15 @@ The JSRouting Provider is a silex routing provider for javascript, that exposes 
 Installation
 ------------
 
+Add the provider to your composer.json
+``` {.json}
+{
+  "requires": {
+    "rootlogin/jsrouting-provider": "dev-master"
+  }
+}
+```
+
 Register the provider in your silex application:
 ``` {.php}
 $app->register(new rootLogin\JSRoutingProvider\Provider\SilexJSRoutingServiceProvider(), array(
