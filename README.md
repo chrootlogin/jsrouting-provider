@@ -44,10 +44,8 @@ It will be automatically activated after you registered the provider.
 
 ### Available Commands
 
-* jsrouting:dump
-  This dumps the router with the known routes (buggy, ATM);
-* jsrouting:dump:router.js
-  This only dumps the router.js. You need to add the routes manually.
+* __jsrouting:dump__: This dumps the router with the known routes (buggy, ATM);
+* __jsrouting:dump:router.js__: This only dumps the router.js. You need to add the routes manually.
   
 Run the tests
 -------------
