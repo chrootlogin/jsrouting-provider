@@ -10,14 +10,42 @@ use rootLogin\JSRoutingProvider\JSRoutingProvider;
 class JSRoutingProviderTest extends \PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var Silex\Application
+	 * @var \Silex\Application
 	 */
 	protected $app;
+
+	/**
+	 * @var array
+	 */
+	protected $expectedRouteResult = array(
+		"routeA" => array(
+			"host" => "",
+			"path" => "/router.js",
+			"schemes" => array(),
+			"requirements" => array(
+				"_method" => "GET"
+			),
+			"condition" => ""
+		),
+		"routeB" => array(
+			"host" => "",
+			"path" => "/user/{id}",
+			"schemes" => array(),
+			"requirements" => array(
+				"_method" => "GET|POST"
+			),
+			"condition" => ""
+		)
+	);
+
+	protected $jsPath;
 	
 	public function __construct()
 	{
+		$this->jsPath = __DIR__ . "/../../../src/rootLogin/JSRoutingProvider/Resources/js/routing.js";
+
+		// Build Sample Application
 		$this->app = new Application();
-		
 		/** @var RouteCollection $routeCollection */
 		$routeCollection = $this->app['routes'];
 		
@@ -40,7 +68,7 @@ class JSRoutingProviderTest extends \PHPUnit_Framework_TestCase
 		
 		$this->assertEquals(
 			$jsrp->getJavaScript(), 
-			file_get_contents(__DIR__ . "/../../../src/rootLogin/JSRoutingProvider/Resources/js/routing.js")
+			file_get_contents($this->jsPath)
 		);
 	}
 	
@@ -48,32 +76,22 @@ class JSRoutingProviderTest extends \PHPUnit_Framework_TestCase
 	{
 		$jsrp = new JSRoutingProvider($this->app);
 		
-		$routes = array(
-			"routeA" => array(
-				"host" => "",
-				"path" => "/router.js",
-				"schemes" => array(),
-				"requirements" => array(
-					"_method" => "GET"
-				),
-				"condition" => ""
-			),
-			"routeB" => array(
-				"host" => "",
-				"path" => "/user/{id}",
-				"schemes" => array(),
-				"requirements" => array(
-					"_method" => "GET|POST"
-				),
-				"condition" => ""
-			)
-		);
-		
 		$res = "";
-		foreach($routes as $name => $route) {
+		foreach($this->expectedRouteResult as $name => $route) {
 			$res .= "\nrouter.addRoute('$name', " . json_encode($route) . ");";
 		}
 		
 		$this->assertEquals($jsrp->getJSRoutes(), $res);
+	}
+
+	public function testJSwithRoutes() {
+		$jsrp = new JSRoutingProvider($this->app);
+
+		$res = file_get_contents($this->jsPath);
+		foreach($this->expectedRouteResult as $name => $route) {
+			$res .= "\nrouter.addRoute('$name', " . json_encode($route) . ");";
+		}
+
+		$this->assertEquals($jsrp->getJSwithRoutes(), $res);
 	}
 }
