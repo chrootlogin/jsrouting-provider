@@ -65,6 +65,9 @@ Run the tests
 -------------
 Go to the base directory of the jsrouting-provider. Do a `composer install` and enter `vendor/bin/phpunit`.
 
+### Run the javascript tests
+Do a `npm install` and enter `node_modules/.bin/gulp test`. Or if you have installed gulp globally enter `gulp test`.
+
 Contribution
 ------------
 Pull request are welcome. Or if you can't or want code you can also contribute by opening a ticket if you see something is wrong.
