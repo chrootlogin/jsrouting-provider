@@ -1,0 +1,43 @@
+{
+  "name": "rootlogin-jsrouting-provider",
+  "description": "javascript routing provider for the silex framework",
+  "homepage": "https://rootlogin.ch",
+  "author": {
+    "name": "Simon Erhardt",
+    "email": "me@rootlogin.ch",
+    "url": "https://rootlogin.ch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chrootLogin/jsrouting-provider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrootLogin/jsrouting-provider/issues"
+  },
+  "licenses": [
+    {
+      "type": "GPL-3.0+",
+      "url": "https://github.com/chrootLogin/jsrouting-provider/blob/master/LICENSE"
+    }
+  ],
+  "main": "src",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "gulp"
+  },
+  "devDependencies": {
+    "gulp": "~3.8",
+    "gulp-jasmine": "~1.0",
+    "gulp-notify": "2.1",
+    "gulp-uglify": "~1.0",
+    "jasmine-node": "~1.14",
+    "jsdom": "~1.5"
+  },
+  "keywords": [
+    "jsrouting",
+    "silex"
+  ],
+  "private": true
+}

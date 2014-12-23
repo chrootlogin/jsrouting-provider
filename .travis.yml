@@ -9,6 +9,10 @@ php:
   - hhvm
 
 before_script:
+  - composer self-update
   - composer --prefer-source --dev install
+  - npm install
 
-script: phpunit --coverage-text --verbose
+script:
+  - phpunit --coverage-text --verbose
+  - node_modules/.bin/gulp test
