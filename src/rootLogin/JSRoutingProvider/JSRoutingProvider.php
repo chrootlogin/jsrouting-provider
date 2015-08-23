@@ -25,6 +25,9 @@ class JSRoutingProvider {
 
     public function getJSwithRoutes() {
         $res = $this->getJavaScript() . $this->getJSRoutes();
+        if (!empty($this->app['jsrouting.base_url'])) {
+            $res .= "\nrouter.baseurl = '" . $this->app['jsrouting.base_url'] . "';";
+        }
 
         return $res;
     }
