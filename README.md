@@ -15,7 +15,7 @@ Add the provider to your composer.json
 ``` {.json}
 {
   "requires": {
-    "rootlogin/jsrouting-provider": "dev-master"
+    "rootlogin/jsrouting-provider": "~1.0"
   }
 }
 ```
