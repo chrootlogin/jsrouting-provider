@@ -2,14 +2,16 @@
 
 namespace rootLogin\JSRoutingProvider\Provider;
 
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
 use rootLogin\JSRoutingProvider\Command\DumpJSCommand;
 use rootLogin\JSRoutingProvider\Command\DumpRouterCommand;
+use Silex\Api\BootableProviderInterface;
 use Silex\Application;
-use Silex\ServiceProviderInterface;
 
-class SilexJSRoutingServiceProvider implements ServiceProviderInterface
+class SilexJSRoutingServiceProvider implements ServiceProviderInterface, BootableProviderInterface
 {
-    public function register(Application $app)
+    public function register(Container $app)
     {
         foreach ($this->getDefaults() as $key => $value) {
             if (!isset($app[$key])) {
